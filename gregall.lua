@@ -137,32 +137,32 @@ local gregallparse_neume = function (str, idx, len)
 end
 
 local add_ls = function(base, ls, position, glyphbox, lsbox)
-   if (position == 9) then
+   if (position == 3) then
       local raise = glyphbox.height - (lsbox.height-lsbox.depth)/2
       return base..'\\raise '..raise..'sp\\hbox{'..ls..'}'
    elseif(position == 6) then
       local raise = (glyphbox.height-glyphbox.depth)/2 - (lsbox.height+lsbox.depth)/2
       return base..'\\raise '..raise..'sp\\hbox{'..ls..'}'
-   elseif(position == 3) then
+   elseif(position == 9) then
       local raise = -glyphbox.depth - (lsbox.height+lsbox.depth)/2
       return base..'\\raise '..raise..'sp\\hbox{'..ls..'}'
-   elseif(position == 2) then
+   elseif(position == 8) then
       local raise = -glyphbox.depth - lsbox.height
       local kern1 = (glyphbox.width + lsbox.width)/2
       local kern2 = (glyphbox.width - lsbox.width)/2
       return base..'\\kern -'..kern1..'sp\\raise '..raise..'sp\\hbox{'..ls..'}\\kern -'..kern2..'sp'
-   elseif(position == 8) then
+   elseif(position == 2) then
       local raise = glyphbox.height + lsbox.depth
       local kern1 = (glyphbox.width + lsbox.width)/2
       local kern2 = (glyphbox.width - lsbox.width)/2
       return base..'\\kern -'..kern1..'sp\\raise '..raise..'sp\\hbox{'..ls..'}\\kern -'..kern2..'sp'
-   elseif(position == 7) then
+   elseif(position == 1) then
       local raise = glyphbox.height - (lsbox.height-lsbox.depth)/2
       return '\\raise '..raise..'sp\\hbox{'..ls..'}'..base
    elseif(position == 4) then
       local raise = (glyphbox.height-glyphbox.depth)/2 - (lsbox.height+lsbox.depth)/2
       return '\\raise '..raise..'sp\\hbox{'..ls..'}'..base
-   elseif(position == 1) then
+   elseif(position == 7) then
       local raise = -glyphbox.depth - (lsbox.height+lsbox.depth)/2
       return '\\raise '..raise..'sp\\hbox{'..ls..'}'..base
    end
