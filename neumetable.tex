@@ -1,0 +1,157 @@
+\documentclass[a4paper]{article}
+\usepackage{color}
+\usepackage{luacode}
+\usepackage[margin=2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{multicol}
+\usepackage{fixltx2e}
+\usepackage{hyperref}
+\usepackage{color}
+\setlength{\columnsep}{0.3cm} \setlength{\columnseprule}{1pt}
+\setmainfont{Linux Libertine O}
+\pagestyle{empty}
+\input{gregall.tex}
+\begin{document}
+I'm working on free fonts of St. Gall neumes for the Gregorio project.
+So far there are two fonts, SGModern, which is mostly based on the work
+from the Bellaigues abbey (about 200 neumatic glyphs) and I've just added
+further 200 neumatic glyphs, and Gregall, where I'm trying to use exact
+shapes from the manuscripts (Cantatorium, Hartker antiphonary, Einsiedeln
+121, Sg. Gall 339 and Bamberg lit. 6).  I'd like to have first complete
+coverage of Cardine's Table of Neumatic Signs of St. Gall and if that is
+done, complete most common neumatic elements which can't be easily combined
+from other neumatic elements plus prepunctis and subpunctis.
+The SGModern font right now doesn't have some significative letters, the
+Gregall font is missing various neumatic glyphs.
+Both fonts are temporarily available from
+\url{http://people.redhat.com/jakub/gregall/}.
+
+Any thoughts where to find the following neumatic
+elements (manuscript, page and perhaps line) in the manuscripts?  From the Cardine's Table
+I'm missing climacus with tenete on it
+{\color{red}{\textsuperscript{t}}\gregallmodchar{ci}}\quad, scandicus with episemas
+\gregallmodchar{sc-1}\quad, melodic scandicus form \gregallmodchar{scM}\quad,
+pes with one subpunctum and one stropha \gregallmodchar{pesu1sux1}\quad,
+2nd form of scandicus flexus with neumatic break \gregallmodchar{sfG1}\quad,
+melodic form of scandicus flexus \gregallmodchar{sfM1}\quad, liquescens scandicus
+flexus \gregallmodchar{sf>}\quad (only have one with two tractulis instead of punctis
+\gregallchar{cl>ppt2}\quad), torculus resuspinus with celeriter on it
+{\color{red}{\textsuperscript{c}}\gregallmodchar{tr}}\quad, torculus resuspinus with
+episema \gregallmodchar{tr-}\quad, one modified shape form of trigonus
+\gregallmodchar{tgS2}\quad, pressus minor with gravis
+\gregallmodchar{piM}\quad, pressus maior with stropha \gregallmodchar{pr>}\quad, salicus with
+frendor on it {\color{red}{\textsuperscript{f}}\gregallmodchar{saM1}}\quad and
+one melodic form of salicus \gregallmodchar{saM}\quad.  Anyone knows where in the MSS
+to find significative letters {\color{red}pulcre}?
+
+In the Cardine's table, I'm seeing various glyphs used for two or more
+neumatic signs, is that correct or just I'm not able to figure out the
+differences in between them?  In particular, is the ancus glyph
+\gregallmodchar{ci~}\quad\gregallchar{ci~} the same glyph for 1st augment. clivis and
+diminut. climacus, or is there any difference in between those two?
+Similarly is the epiphonus glyph \gregallmodchar{pe~}\quad\gregallchar{pe~}\quad the same
+glyph for augment. tractulus, diminut. pes and diminut. virga strata?
+Is augment. virga strata \gregallmodchar{vs>}\quad\gregallchar{vs>}\quad the same
+glyph as diminut. pressus maior?  Is 3rd augment. form of pes
+\gregallmodchar{pe>2}\quad\gregallchar{pe>2}\quad the same glyph as diminut. scandicus
+and diminut. salicus (tractulus + epiphonus)?  What about augment. porrectus
+\gregallmodchar{po>}\quad\gregallchar{po>}\quad and diminut. porrectus flexus?
+Augment. torculus \gregallmodchar{to>}\quad\gregallchar{to>}\quad and diminut. pes
+subbipunctis?  Augment. virga (cephalicus) \gregallmodchar{vi>}\quad\gregallchar{vi>}\quad
+and diminut. clivis?  Porrectus flexus with neumatic break
+\gregallmodchar{sfM}\quad\gregallchar{sfM}\quad and 1st melodic form
+of scandicus flexus?
+
+As the majority of the SGModern font was designed by others, I'd appreciate
+feedback on matching of some of the glyphs in that font with what I found in
+the manuscripts and what is in the Gregorian Semiology.  Most importantly,
+the diminut. porrectus \gregallchar{po~}\quad, diminut. torculus resuspinus
+\gregallchar{tr~}\quad and the same with episema \gregallchar{tr-~}\quad look to me like virga or
+pes with epiphonus attached to the top, while the SGModern font have
+glyphs with the epiphonus attached to the bottom \gregallmodchar{po~}\quad,
+\gregallmodchar{tr~}\quad, \gregallmodchar{tr-~}\quad, which I haven't found in the
+manuscripts in such a form.  Can that be considered the same glyphs?
+Also, in the manuscripts I also found (in many places) a form with quadratic
+form of the beginning of the torculus \gregallchar{tr-~1}\quad, is that an
+important glyph difference or just a small detail that can be ignored?
+
+The second augment. form of clivis \gregallchar{cl>1} has the right lower curve much
+bigger than the glyphs in SGModern \gregallmodchar{cl>1} (and similarly with episema),
+is that also something that can be easily understood as the same neumatic
+element?
+
+For some of the shape modifications of torculus and torculus resuspinus, I'm
+afraid I don't clearly grok which characters are which.  For the 2nd shape
+modified torculus in the Cardine's table, the SGModern font has two quite
+similar glyphs \gregallmodchar{toS1}\quad and \gregallmodchar{toS4}\quad, what I found in the
+manuscripts is only \gregallchar{toS1}\quad, is that the first or second SGModern
+glyph and which of those two is the one in Cardine's table?
+Similarly the 2nd shape modified torculus resuspinus, SGModern has
+\gregallmodchar{trS1}\quad, what I found in the MSS is \gregallchar{trS1}\quad, but not sure
+if it is the same neume.  For the 3rd shape modified torculus resuspinus,
+I'm not sure what is the difference from the plain torculus resuspinus
+\gregallmodchar{tr}\quad\gregallchar{tr}\quad.
+
+Also, I'd like to ask, some glyphs like clivis combined with pressus come
+in two different forms:
+\gregallmodchar{cl!pi}\quad\gregallchar{cl!pi}\quad and
+\gregallmodchar{cl!pr}\quad\gregallchar{cl!pr}\quad.  Is the first one clivis with
+pressus minor and the second one with pressus maior, or is that both pressus
+minor, just in different shape?
+
+In the Einsiedeln 121 codex, I've often found a salicus where the shape of
+the punctum looked much more like a tractulus than punctum, but it seems
+in Graduale Triplex that is usually painted just as punctum.  Is that just
+an insignificant change one can ignore?
+
+The SGModern font has separate {\fontsize{16}{16}\color{red}\GreGallModern\char200}\quad and \gregallmodchar{pe>1}\quad
+characters, all I found in the MSS so far was \gregallchar{pe>1}\quad, is that
+the first or second glyph in SGModern?  Which one is the 2nd augment. pes form in
+Cardine's table, and how can be the other neume classified?
+
+For all the glyphs in the Gregall font, I have notes from where I've picked
+those up, have a 4 month old document at my web pages which describes that,
+but as about 100 glyphs has been added to that font since then, it is out of
+date, if anyone wants to know a particular glyph, I can answer it quickly,
+otherwise I'll try to eventually update that document, but it might take
+some time.
+
+\vfill
+
+\begin{luacode*}
+  local i
+  local last
+  local key
+  local str
+  local keym
+  local arr = {}
+  for key in pairs(gregalltab['gregall']) do
+    table.insert(arr, key)
+  end
+  for key in pairs(gregalltab['gregallmod']) do
+    table.insert(arr, key)
+  end
+  table.sort(arr)
+  tex.sprint("\\begin{multicols}{3}\\noindent");
+  for i, key in ipairs(arr) do
+    if last ~= key then
+      last = key
+      keym = key:gsub("~","\\~{}")
+      str = keym .. "\\hfill"
+      if gregalltab['gregall'][key] then
+        str = str .. "{\\fontsize{8}{8}\\color{red}" .. gregalltab['gregall'][key] .. "}"
+      else
+        str = str .. "{\\color{blue}missing}"
+      end
+      str = str .. "\\hfill"
+      if gregalltab['gregallmod'][key] then
+        str = str .. "{\\fontsize{16}{16}\\color{red}" .. gregalltab['gregallmod'][key] .. "}"
+      else
+        str = str .. "{\\color{blue}missing}"
+      end
+      tex.sprint(str .. "\\\\")
+    end
+  end
+  tex.sprint("\\end{multicols}")
+\end{luacode*}
+\end{document}

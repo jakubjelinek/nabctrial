@@ -1,0 +1,100 @@
+% !TEX TS-program = lualatex
+% !TEX encoding = UTF-8
+
+% This is a simple template for a LuaLaTeX document using gregorio scores.
+
+\documentclass[12pt]{article} % use larger type; default would be 10pt
+
+% usual packages loading:
+\usepackage{fontspec}
+\usepackage{graphicx} % support the \includegraphics command and options
+%\usepackage{geometry} % See geometry.pdf to learn the layout options. There are lots.
+%\geometry{a5paper} % or letterpaper (US) or a5paper or....
+\usepackage[a5paper,left=0.2cm,right=0.5cm,top=0.2cm,bottom=0.2cm]{geometry}
+\usepackage{gregoriotex} % for gregorio score inclusion
+\usepackage[cm]{fullpage} % to reduce the margins
+%\pagenumbering{gobble}% Remove page numbers (and reset to 1)
+\pagestyle{empty}
+
+\textwidth 5in
+
+\input{gregall.tex}
+
+% to change the font to something better, you can install the kpfonts package (if not already installed). To do so
+% go open the "TeX Live Manager" in the Menu Start->All Programs->TeX Live 2010
+
+% here we begin the document
+\begin{document}
+
+% Here we set the space around the initial.
+% Please report to http://home.gna.org/gregorio/gregoriotex/details for more details and options
+\setspaceafterinitial{1mm plus 0em minus 0em}
+\setspacebeforeinitial{1mm plus 0em minus 0em}
+
+% Here we set the initial font. Change 43 if you want a bigger initial.
+\def\greinitialformat#1{%
+{{\color{red}\fontsize{46}{46}\selectfont #1}}%
+}
+
+% We set IV above the initial.
+%\gresetfirstlineaboveinitial{\tiny \textsc{\textbf{II D}}}{\tiny \textsc{\textbf{II D}}}
+
+% We type a text in the top right corner of the score:
+%\commentary{{\small \emph{XVII. s.}}}
+
+% and finally we include the score. The file must be in the same directory as this one.
+\includescore{ant1.tex}
+\vfill
+
+\includescore{ant2.tex}
+\vfill
+
+\includescore{ant3.tex}
+\vfill
+
+\includescore{ant4.tex}
+\vfill
+
+\includescore{ant5.tex}
+\vfill
+
+\includescore{ant-magn-vesp1.tex}
+\vfill
+
+\includescore{ant-magn-vesp2.tex}
+\vfill
+
+\includescore{ant-ben-laud.tex}
+\vfill
+
+\includescore{matant1.tex}
+\vfill
+
+\includescore{matant2.tex}
+\vfill
+
+\includescore{matant3.tex}
+\vfill
+
+\includescore{matant4.tex}
+\vfill
+
+\includescore{matant5.tex}
+\vfill
+
+\includescore{matant6.tex}
+\vfill
+
+\includescore{matant7.tex}
+\vfill
+
+\includescore{matant8.tex}
+\vfill
+
+\includescore{matant9.tex}
+\vfill
+
+\includescore{matresp1.tex}
+\vfill
+
+\end{document}
