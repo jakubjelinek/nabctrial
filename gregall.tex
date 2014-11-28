@@ -2,7 +2,7 @@
 \newfontface\GreGallModern{SGModern.ttf}
 \directlua{dofile('gregall.lua')}
 \newcommand{\gregallcharno}[2]{{\directlua{
-  tex.sprint(gregallparse.neumes("\luaescapestring{#1}", "\luaescapestring{#2}"))
+  tex.sprint(gregallparse_neumes("\luaescapestring{#1}", "\luaescapestring{#2}"))
 }}}
 \def\gregallchar{%
   \begingroup %

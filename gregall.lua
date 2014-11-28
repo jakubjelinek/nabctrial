@@ -12,7 +12,7 @@ local gregallaliases = {
 ["pr~"] = "vs>",
 ["ppt1"] = "ta" }
 
-function gregallreadfont(pfx, font_id)
+local function gregallreadfont(pfx, font_id)
   local tab = {}
   local metrics = {}
   local fontdata = fonts.hashes.identifiers[font_id]
@@ -40,20 +40,19 @@ for key, value in pairs(fonts.hashes.identifiers) do
 end
 
 gregalltab = {}
-gregallmetrics = {}
+local gregallmetrics = {}
 gregalltab.gregall, gregallmetrics.gregall = gregallreadfont("GreGall", name_id["gregall"])
 gregalltab.gregallmod, gregallmetrics.gregallmod = gregallreadfont("GreGallModern", name_id["SGallModern"])
-gregallneumekinds = { vi = 1, pu = 1, ta = 1, gr = 1, cl = 1, un = 1, pv = 1, pe = 1, po = 1, to = 1, ci = 1, sc = 1, pf = 1, sf = 1, tr = 1,
+local gregallneumekinds = { vi = 1, pu = 1, ta = 1, gr = 1, cl = 1, un = 1, pv = 1, pe = 1, po = 1, to = 1, ci = 1, sc = 1, pf = 1, sf = 1, tr = 1,
 		      st = 1, ds = 1, ts = 1, tg = 1, bv = 1, tv = 1, pr = 1, pi = 1, vs = 1, ["or"] = 1, sa = 1, pq = 1, qi = 1, ql = 1, pt = 1 }
-gregalllskinds = { c = 1, t = 1, s = 1, l = 1, x = 1, ["+"] = 1, a = 1, al = 1, am = 1, b = 1, cm = 1, co = 1, cw = 1, d = 1, e = 1, eq = 1,
+local gregalllskinds = { c = 1, t = 1, s = 1, l = 1, x = 1, ["+"] = 1, a = 1, al = 1, am = 1, b = 1, cm = 1, co = 1, cw = 1, d = 1, e = 1, eq = 1,
 		   ew = 1, f = 1, fid = 1, fr = 1, g = 1, h = 1, hp = 1, hn = 1, i = 1, im = 1, iv = 1, k = 1, lb = 1, lc = 1, len = 1,
 		   lm = 1, lp = 1, lt = 1, m = 1, md = 1, moll = 1, n = 1, nl = 1, nt = 1, p = 1, par = 1, pfec = 1, pm = 1, q = 1,
 		   sb = 1, sc = 1, sc = 1, simil = 1, simul = 1, sj = 1, sjc = 1, sjcm = 1, sm = 1, st = 1, sta = 1, su = 1, tb = 1,
 		   th = 1, tm = 1, tw = 1, v = 1, ve = 1, vol = 1 }
-gregallparse = {}
 
 -- Parse a single base neume
-function gregallparse.base (str, idx, len)
+local gregallparse_base = function (str, idx, len)
   local ret = str:sub(idx, idx + 1)
   local alt = {}
   local height = 5
@@ -90,7 +89,7 @@ end
 -- Parse one neume, which is one base neume or several base neumes
 -- separated with ! characters, and all this followed by arbitrary
 -- ls, pp and su modifiers.
-function gregallparse.neume (str, idx, len)
+local gregallparse_neume = function (str, idx, len)
   local err
   local bases = {}
   local heights = {}
@@ -99,10 +98,10 @@ function gregallparse.neume (str, idx, len)
   local ls = {}
   local lsidx = 0
   local i = 1
-  err, idx, bases[0], heights[0] = gregallparse.base(str, idx, len)
+  err, idx, bases[0], heights[0] = gregallparse_base(str, idx, len)
   if err == 1 then return 1 end
   while idx <= len and str:sub(idx, idx) == "!" do
-    err, idx, bases[i], heights[i] = gregallparse.base(str, idx + 1, len)
+    err, idx, bases[i], heights[i] = gregallparse_base(str, idx + 1, len)
     if err == 1 then return 1 end
     i = i + 1
   end
@@ -137,14 +136,14 @@ function gregallparse.neume (str, idx, len)
   return 0, idx, bases, heights, ls, pp, su
 end
 
-function gregallparse.neumes (str, kind)
+gregallparse_neumes = function(str, kind)
   local len = str:len()
   local idx = 1
   local ret = ''
   if len == 0 then return "ERR" end
   while idx <= len do
     local err, bases, heights, ls, pp, su, lscount
-    err, idx, bases, heights, ls, pp, su = gregallparse.neume (str, idx, len)
+    err, idx, bases, heights, ls, pp, su = gregallparse_neume (str, idx, len)
     if err == 1 then return ret .. "ERR" end
     local base = bases[0]
     local i = 1
