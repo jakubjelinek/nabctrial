@@ -150,12 +150,12 @@ local add_ls = function(base, ls, position, glyphbox, lsbox)
       local raise = -glyphbox.depth - lsbox.height
       local kern1 = (glyphbox.width + lsbox.width)/2
       local kern2 = (glyphbox.width - lsbox.width)/2
-      return base..'\\kern -'..kern1..'sp\\raise '..raise..'sp\\hbox{'..ls..'}\\kern -'..kern2..'sp'
+      return base..'\\kern -'..kern1..'sp\\raise '..raise..'sp\\hbox{'..ls..'}\\kern '..kern2..'sp'
    elseif(position == 2) then
       local raise = glyphbox.height + lsbox.depth
       local kern1 = (glyphbox.width + lsbox.width)/2
       local kern2 = (glyphbox.width - lsbox.width)/2
-      return base..'\\kern -'..kern1..'sp\\raise '..raise..'sp\\hbox{'..ls..'}\\kern -'..kern2..'sp'
+      return base..'\\kern -'..kern1..'sp\\raise '..raise..'sp\\hbox{'..ls..'}\\kern '..kern2..'sp'
    elseif(position == 1) then
       local raise = glyphbox.height - (lsbox.height-lsbox.depth)/2
       return '\\raise '..raise..'sp\\hbox{'..ls..'}'..base
