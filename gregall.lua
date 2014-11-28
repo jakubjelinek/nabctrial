@@ -21,7 +21,7 @@ local function gregallreadfont(pfx, font_id)
     local name = key:gsub("B", ">"):gsub("N", "-"):gsub("E", "!"):gsub("T", "~")
     if g and (value >= 0xe400) and (value < 0xf000) then
       tab[name] = "{\\" .. pfx .. "\\char" .. value .. "}"
-      metrics[name] = { width = g.width, height = g.height, depth = g.depth }
+      metrics[name] = { width = g.width, height = g.height, depth = (g.depth and g.depth or 0) }
     end
   end
   for key, value in pairs(gregallaliases) do
@@ -136,6 +136,38 @@ local gregallparse_neume = function (str, idx, len)
   return 0, idx, bases, heights, ls, pp, su
 end
 
+local add_ls = function(base, ls, position, glyphbox, lsbox)
+   if (position == 9) then
+      local raise = glyphbox.height - (lsbox.height-lsbox.depth)/2
+      return base..'\\raise '..raise..'sp\\hbox{'..ls..'}'
+   elseif(position == 6) then
+      local raise = (glyphbox.height-glyphbox.depth)/2 - (lsbox.height+lsbox.depth)/2
+      return base..'\\raise '..raise..'sp\\hbox{'..ls..'}'
+   elseif(position == 3) then
+      local raise = -glyphbox.depth - (lsbox.height+lsbox.depth)/2
+      return base..'\\raise '..raise..'sp\\hbox{'..ls..'}'
+   elseif(position == 2) then
+      local raise = -glyphbox.depth - lsbox.height
+      local kern1 = (glyphbox.width + lsbox.width)/2
+      local kern2 = (glyphbox.width - lsbox.width)/2
+      return base..'\\kern -'..kern1..'sp\\raise '..raise..'sp\\hbox{'..ls..'}\\kern -'..kern2..'sp'
+   elseif(position == 8) then
+      local raise = glyphbox.height + lsbox.depth
+      local kern1 = (glyphbox.width + lsbox.width)/2
+      local kern2 = (glyphbox.width - lsbox.width)/2
+      return base..'\\kern -'..kern1..'sp\\raise '..raise..'sp\\hbox{'..ls..'}\\kern -'..kern2..'sp'
+   elseif(position == 7) then
+      local raise = glyphbox.height - (lsbox.height-lsbox.depth)/2
+      return '\\raise '..raise..'sp\\hbox{'..ls..'}'..base
+   elseif(position == 4) then
+      local raise = (glyphbox.height-glyphbox.depth)/2 - (lsbox.height+lsbox.depth)/2
+      return '\\raise '..raise..'sp\\hbox{'..ls..'}'..base
+   elseif(position == 1) then
+      local raise = -glyphbox.depth - (lsbox.height+lsbox.depth)/2
+      return '\\raise '..raise..'sp\\hbox{'..ls..'}'..base
+   end
+end
+
 gregallparse_neumes = function(str, kind)
   local len = str:len()
   local idx = 1
@@ -225,17 +257,10 @@ gregallparse_neumes = function(str, kind)
 	if su ~= '' then base = base .. gregalltab[kind][su] end
 	for i = 0, lscount - 1 do
 	  if ls[i] ~= '' then
-	    local p = ls[i]:sub(-1, -1)
+	    local p = tonumber(ls[i]:sub(-1, -1))
 	    local l = ls[i]:sub(1, -2)
-	    if p == "2" then
-	      above = above .. gregalltab[kind][l]
-	    elseif p == "8" then
-	      below = below .. gregalltab[kind][l]
-	    elseif p == "1" or p == "4" or p == "7" then
-	      base = gregalltab[kind][l] .. base
-	    elseif p == "3" or p == "6" or p == "9" then
-	      base = base .. gregalltab[kind][l]
-	    end
+	    local lstr = gregalltab[kind][l]
+	    base = add_ls(base, lstr, p, gregallmetrics[kind][r], gregallmetrics[kind][l])
 	  end
 	end
       end
