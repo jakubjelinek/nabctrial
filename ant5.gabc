@@ -3,6 +3,7 @@ office-part: laudes, 5. ant.;
 occasion: In Epiphania Domini;
 book: Antiphonale Monasticum 1933, pg. 291;
 mode: 7;
+nabc-lines: 1;
 initial-style: 1;
 transcriber: Andrew Hinkley, Jakub Jelínek;
 %%

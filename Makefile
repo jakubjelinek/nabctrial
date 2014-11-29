@@ -5,6 +5,6 @@ test.pdf: test.tex $(SCORES) gregall.ttf SGModern.ttf gregall.tex
 neumetable.pdf: neumetable.tex gregall.ttf SGModern.ttf gregall.tex
 	lualatex $< && lualatex $<
 $(SCORES): %.tex: %.gabc
-	awk -f gregall.awk $< | gregorio -s -o $@
+	gregorio $<
 clean:
 	rm -f $(SCORES) *.gaux *.aux *.log *~
