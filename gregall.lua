@@ -136,34 +136,34 @@ local gregallparse_neume = function (str, idx, len)
   return 0, idx, bases, heights, ls, pp, su
 end
 
-local add_ls = function(base, ls, position, glyphbox, lsbox)
+local add_ls = function(base, ls, position, glyphbox, lsbox, baseraise)
    if (position == 3) then
-      local raise = glyphbox.height - (lsbox.height-lsbox.depth)/2
+      local raise = glyphbox.height - (lsbox.height-lsbox.depth)/2 + baseraise
       return base..'\\raise '..raise..'sp\\hbox{'..ls..'}'
    elseif(position == 6) then
-      local raise = (glyphbox.height-glyphbox.depth)/2 - (lsbox.height+lsbox.depth)/2
+      local raise = (glyphbox.height-glyphbox.depth)/2 - (lsbox.height+lsbox.depth)/2 + baseraise
       return base..'\\raise '..raise..'sp\\hbox{'..ls..'}'
    elseif(position == 9) then
-      local raise = -glyphbox.depth - (lsbox.height+lsbox.depth)/2
+      local raise = -glyphbox.depth - (lsbox.height+lsbox.depth)/2 + baseraise
       return base..'\\raise '..raise..'sp\\hbox{'..ls..'}'
    elseif(position == 8) then
-      local raise = -glyphbox.depth - lsbox.height
+      local raise = -glyphbox.depth - lsbox.height + baseraise
       local kern1 = (glyphbox.width + lsbox.width)/2
       local kern2 = (glyphbox.width - lsbox.width)/2
       return base..'\\kern -'..kern1..'sp\\raise '..raise..'sp\\hbox{'..ls..'}\\kern '..kern2..'sp'
    elseif(position == 2) then
-      local raise = glyphbox.height + lsbox.depth
+      local raise = glyphbox.height + lsbox.depth + baseraise
       local kern1 = (glyphbox.width + lsbox.width)/2
       local kern2 = (glyphbox.width - lsbox.width)/2
       return base..'\\kern -'..kern1..'sp\\raise '..raise..'sp\\hbox{'..ls..'}\\kern '..kern2..'sp'
    elseif(position == 1) then
-      local raise = glyphbox.height - (lsbox.height-lsbox.depth)/2
+      local raise = glyphbox.height - (lsbox.height-lsbox.depth)/2 + baseraise
       return '\\raise '..raise..'sp\\hbox{'..ls..'}'..base
    elseif(position == 4) then
-      local raise = (glyphbox.height-glyphbox.depth)/2 - (lsbox.height+lsbox.depth)/2
+      local raise = (glyphbox.height-glyphbox.depth)/2 - (lsbox.height+lsbox.depth)/2 + baseraise
       return '\\raise '..raise..'sp\\hbox{'..ls..'}'..base
    elseif(position == 7) then
-      local raise = -glyphbox.depth - (lsbox.height+lsbox.depth)/2
+      local raise = -glyphbox.depth - (lsbox.height+lsbox.depth)/2 + baseraise
       return '\\raise '..raise..'sp\\hbox{'..ls..'}'..base
    end
 end
@@ -255,12 +255,17 @@ gregallparse_neumes = function(str, kind)
 	-- against the base neume?
 	if pp ~= '' then base = gregalltab[kind][pp] .. base end
 	if su ~= '' then base = base .. gregalltab[kind][su] end
+	local baseraise = 0
+	if heights[0] ~= 5 then
+	  baseraise = (heights[0] - 5) * gregallmetrics[kind].cl.height / 4
+	  base = '\\raise '..baseraise..'sp\\hbox{'..base..'}'
+	end
 	for i = 0, lscount - 1 do
 	  if ls[i] ~= '' then
 	    local p = tonumber(ls[i]:sub(-1, -1))
 	    local l = ls[i]:sub(1, -2)
 	    local lstr = gregalltab[kind][l]
-	    base = add_ls(base, lstr, p, gregallmetrics[kind][r], gregallmetrics[kind][l])
+	    base = add_ls(base, lstr, p, gregallmetrics[kind][r], gregallmetrics[kind][l], baseraise)
 	  end
 	end
       end
