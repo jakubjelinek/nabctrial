@@ -173,6 +173,7 @@ peS	pesqd
 pe-1	pesqde
 pe-1su2	pesqdepp
 pe-1su1suu1	pesqdepte
+pe-1sut1sux1	pesqdetstro
 pe-1sut2	pesqdett
 pe>1	pesqdl
 pqS	pesqdoris
@@ -195,6 +196,7 @@ po-	pore2
 po-2	pore3
 po>	porl
 pf~	porl
+ci-pp2	ppclvepp
 pr	prma
 prlsc1	prmaC
 prlst2	prmaT
@@ -241,6 +243,7 @@ qi!cl	ql2cli
 qi!cl-	ql2clie
 qi	ql2pes
 qi-	ql2pese
+qi-su2	ql2pesepp
 qi>	ql2pesl
 qi!vs	ql2pesstr
 qi!po	ql2por
@@ -256,8 +259,13 @@ ql!cl!pi	ql3cliprmi
 ql!clS	ql3clit
 ql	ql3pes
 ql-	ql3pese
+ql-su2	ql3pesepp
+ql-sut2	ql3pesett
+ql-sut1sux1	ql3pesetstro
+ql-suu2	ql3pesetete
 ql>	ql3pesl
 ql!vs	ql3pesstr
+ql!vssu2	ql3pesstrpp
 ql!po	ql3por
 ql!po-1	ql3pore
 ql!po>	ql3porl
@@ -276,6 +284,7 @@ sa-1	salieoris
 saM3	salieveoris
 sa>	salil
 sa1	salioris
+sa>2	saliorisl
 saG	salitpesqs
 saM	saliv
 saM-1	salive
@@ -306,7 +315,8 @@ pe>ppt1	sctpesl
 qi!clppt1	sctq2cli
 qippt1	sctq2p
 qi>ppt1	sctq2pl
-ql!cl>ppt1	sctqance
+ql!cl>ppt1	sctqanc
+ql!cl->ppt1	sctqance
 ql!clppt1	sctqcli
 ql!clMppt1	sctqcli3
 ql!cl!cl>ppt1	sctqclianc
@@ -314,6 +324,10 @@ ql!cl-ppt1	sctqclie
 ql!cl!pippt1	sctqcliprmi
 qlppt1	sctqp
 ql-ppt1	sctqpe
+ql-ppt1su2	sctqpepp
+ql!vsppt1	sctqpesstr
+ql!vsppt1su2	sctqpesstrpp
+ql-ppt1suu2	sctqpetete
 ql>ppt1	sctqpl
 ql!poppt1	sctqpor
 ql!po-1ppt1	sctqpore
@@ -402,6 +416,7 @@ ta-	trace
 suu1	trace
 ppu1	trace
 ppu2	trace2A
+suu2	trace2D
 ppu3	trace3A
 ppu4	trace4A
 ppu5	trace5A
