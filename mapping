@@ -35,6 +35,7 @@ clS1	cliq
 clS-1	cliqe
 clS	clitra
 clS-	clitrae
+clS-su2	clitraepp
 cl	cliv
 cllsc2	clivC
 cllst2	clivT
@@ -182,6 +183,7 @@ pqS>	pesqdorisl
 peSsu2	pesqdpp
 peSsu1sux1	pesqdps
 peSsut2	pesqdtt
+peSsut3	pesqdttt
 pq	pesqs
 pqlsfr1	pesqsF
 pq!cl>	pesqsanc
@@ -196,6 +198,7 @@ po-	pore2
 po-2	pore3
 po>	porl
 pf~	porl
+posu2	porpp
 ci-pp2	ppclvepp
 pr	prma
 prlsc1	prmaC
@@ -246,6 +249,7 @@ qi-	ql2pese
 qi-su2	ql2pesepp
 qi>	ql2pesl
 qi!vs	ql2pesstr
+qi!vssu2	ql2pesstrpp
 qi!po	ql2por
 ql!cl>	ql3anc
 ql!cl->	ql3ance
@@ -260,12 +264,14 @@ ql!clS	ql3clit
 ql	ql3pes
 ql-	ql3pese
 ql-su2	ql3pesepp
+ql-su1sux1	ql3pesepstro
 ql-sut2	ql3pesett
 ql-sut1sux1	ql3pesetstro
 ql-suu2	ql3pesetete
 ql>	ql3pesl
 ql!vs	ql3pesstr
 ql!vssu2	ql3pesstrpp
+ql!vssut2	ql3pesstrtt
 ql!po	ql3por
 ql!po-1	ql3pore
 ql!po>	ql3porl
@@ -315,6 +321,10 @@ pe>ppt1	sctpesl
 qi!clppt1	sctq2cli
 qippt1	sctq2p
 qi>ppt1	sctq2pl
+qi!vsppt1	sctq2pesstr
+qi!vsppt1su2	sctq2pesstrpp
+ql!vsppt1sut2	sctqpesstrtt
+ql-pptsu1sux1	sctqpepstro
 ql!cl>ppt1	sctqanc
 ql!cl->ppt1	sctqance
 ql!clppt1	sctqcli
@@ -336,6 +346,7 @@ cl>ppt2	scttanc
 sfS	scttcli
 sf-	scttclie
 sfG	scttor
+to>pp2	scttorl
 vippt3	sctttv
 vi-ppt3	sctttve
 vi>ppt3	sctttvl
@@ -367,6 +378,7 @@ to>	torl
 to>1	torl2
 to->	torle
 toS	torlg1
+toSsu2	torlg1pp
 trS	torlg1v
 trS-	torlg1ve
 toS1	torlg2
@@ -381,6 +393,8 @@ trS1	torqdv
 pq!cl	torqs
 pq!cl-	torqse
 trG	tort
+toS2sux1	tortg
+toS2su2	tortpp
 toS2	tortra
 trG2	tortra_vir
 to-1	tortrae
@@ -388,6 +402,7 @@ toS2sut1	tortt
 tr	torvir
 trlst2	torvirT
 tr-1	torvire1
+tr-1su2	torvire1pp
 tr-	torvire2
 tr-2	torvire3
 tr>	torvl
