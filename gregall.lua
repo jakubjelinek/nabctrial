@@ -87,7 +87,7 @@ local gregallparse_base = function (str, idx, len)
   local ret = str:sub(idx, idx + 1)
   local alt = {}
   local height = 5
-  local alts = "-><~MSG"
+  local alts = "MSG-><~"
   if idx >= len or not gregallneumekinds[ret] then return 1 end
   idx = idx + 2
   -- The alternation modifiers can be written in arbitrary order,
@@ -203,7 +203,10 @@ gregallparse_neumes = function(str, kind)
   local len = str:len()
   local idx = 1
   local ret = ''
-  if len == 0 then return "ERR" end
+  while idx <= len and str:sub(idx, idx) == "/" do
+    ret = ret .. "\\enspace{}"
+    idx = idx + 1
+  end
   while idx <= len do
     local err, bases, heights, ls, pp, su, lscount
     err, idx, bases, heights, ls, pp, su = gregallparse_neume (str, idx, len)
@@ -232,8 +235,11 @@ gregallparse_neumes = function(str, kind)
       local l = {}
       function l.try (kind, base, parts, pp, su, ls)
 	if parts == 2 and pp ~= '' and su ~= '' and gregalltab[kind][base .. pp .. su .. ls] then return base .. pp .. su .. ls, '', '' end
-	if parts == 1 and pp ~= '' and gregalltab[kind][base .. pp .. ls] then return base .. pp .. ls, '', su end
+	-- Prefer subpunctis over prepunctis.
 	if parts == 1 and su ~= '' and gregalltab[kind][base .. su .. ls] then return base .. su .. ls, pp, '' end
+	if parts == 1 and pp ~= '' and gregalltab[kind][base .. pp .. ls] then return base .. pp .. ls, '', su end
+	-- Prefer subpunctis over significative letters.
+	if parts == 0 and su ~= '' and ls ~= '' and gregalltab[kind][base .. su] then return nil, pp, su end
 	if parts == 0 and gregalltab[kind][base .. ls] then return base .. ls, pp, su end
 	return nil, pp, su
       end
