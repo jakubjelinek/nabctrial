@@ -64,6 +64,7 @@ vi-su1suu1su1	clveptep
 vi-su1suu2	clveptete
 vi-su1sut1su2	clveptpp
 vi-su1sut2su1	clvepttp
+vi-suu1su2	clvetepp
 vi-suu2su2	clvetetepp
 vi-sut1sux1	clvetstro
 vi-sut2	clvett
@@ -264,6 +265,7 @@ ql!clS	ql3clit
 ql	ql3pes
 ql-	ql3pese
 ql-su2	ql3pesepp
+ql-su1sut2	ql3peseptt
 ql-su1sux1	ql3pesepstro
 ql-sut2	ql3pesett
 ql-sut1sux1	ql3pesetstro
@@ -335,6 +337,7 @@ ql!cl!pippt1	sctqcliprmi
 qlppt1	sctqp
 ql-ppt1	sctqpe
 ql-ppt1su2	sctqpepp
+ql-ppt1su1sut2	sctqpeptt
 ql!vsppt1	sctqpesstr
 ql!vsppt1su2	sctqpesstrpp
 ql-ppt1suu2	sctqpetete
