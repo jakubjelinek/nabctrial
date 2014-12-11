@@ -167,7 +167,7 @@ local gregallparse_neume = function (str, idx, len)
   return 0, idx, bases, heights, ls, pp, su
 end
 
-local add_ls = function(base, pre, ls, position, glyphbox, lsbox, baseraise, lwidths, curlwidths)
+local add_ls = function(base, pre, ls, position, glyphbox, lsbox, baseraise, lwidths, curlwidths, scale)
   local raise = 0
   if position == 3 or position == 6 or position == 9 then
     if position == 3 then
@@ -184,6 +184,9 @@ local add_ls = function(base, pre, ls, position, glyphbox, lsbox, baseraise, lwi
       curlwidths[12] = 1
       kern1 = 0
     end
+    kern1 = kern1 * scale
+    kern2 = kern2 * scale
+    raise = raise * scale
     return base..'\\kern '..kern1..'sp\\raise '..raise..'sp\\hbox{'..ls..'}\\kern '..kern2..'sp', pre
   elseif position == 2 or position == 8 then
     if position == 2 then
@@ -196,9 +199,12 @@ local add_ls = function(base, pre, ls, position, glyphbox, lsbox, baseraise, lwi
     local kern2 = - kern1 - lsbox.width
     if curlwidths[11] == 0 and glyphbox.width < lwidths[11] then
       curlwidths[11] = 1
-      base = '\\kern '..((lwidths[11] - glyphbox.width)/2)..'sp'..base
+      base = '\\kern '..((lwidths[11] - glyphbox.width)/2 * scale)..'sp'..base
       kern1 = kern1 + lwidths[11] - (lwidths[11] - glyphbox.width)/2
     end
+    kern1 = kern1 * scale
+    kern2 = kern2 * scale
+    raise = raise * scale
     return base..'\\kern '..kern1..'sp\\raise '..raise..'sp\\hbox{'..ls..'}\\kern '..kern2..'sp', pre
   else
     if position == 1 then
@@ -215,11 +221,14 @@ local add_ls = function(base, pre, ls, position, glyphbox, lsbox, baseraise, lwi
       curlwidths[10] = 1
       kern1 = lwidths[10] - lwidths[position]
     end
+    kern1 = kern1 * scale
+    kern2 = kern2 * scale
+    raise = raise * scale
     return base, pre..'\\kern '..kern1..'sp\\raise '..raise..'sp\\hbox{'..ls..'}\\kern '..kern2..'sp'
   end
 end
 
-gregallparse_neumes = function(str, kind)
+gregallparse_neumes = function(str, kind, scale)
   local len = str:len()
   local idx = 1
   local ret = ''
@@ -326,7 +335,7 @@ gregallparse_neumes = function(str, kind)
 	local baseraise = 0
 	if heights[0] ~= 5 then
 	  baseraise = (heights[0] - 5) * gregallmetrics[kind].cl.height / 4
-	  base = '\\raise '..baseraise..'sp\\hbox{'..base..'}'
+	  base = '\\raise '..(baseraise * scale)..'sp\\hbox{'..base..'}'
 	end
 	local lwidths = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
 	local curlwidths = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
@@ -346,7 +355,7 @@ gregallparse_neumes = function(str, kind)
 	    local p = tonumber(ls[i]:sub(-1, -1))
 	    local l = ls[i]:sub(1, -2)
 	    local lstr = gregalltab[kind][l]
-	    base, pre = add_ls(base, pre, lstr, p, rmetrics, gregallmetrics[kind][l], baseraise, lwidths, curlwidths)
+	    base, pre = add_ls(base, pre, lstr, p, rmetrics, gregallmetrics[kind][l], baseraise, lwidths, curlwidths, scale)
 	  end
 	end
 	base = pre..base

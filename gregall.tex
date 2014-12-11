@@ -1,8 +1,8 @@
 \newfontface\GreGall{gregall.ttf}
 \newfontface\GreGallModern{SGModern.ttf}
 \directlua{dofile('gregall.lua')}
-\newcommand{\gregallcharno}[2]{{\directlua{
-  tex.sprint(gregallparse_neumes("\luaescapestring{#1}", "\luaescapestring{#2}"))
+\newcommand{\gregallcharno}[3]{{\directlua{
+  tex.sprint(gregallparse_neumes("\luaescapestring{#1}", "\luaescapestring{#2}", \luaescapestring{#3}))
 }}}
 \def\gregallchar{%
   \begingroup %
@@ -12,7 +12,7 @@
     \dogregallchar%
 }
 \def\dogregallchar#1{
-    \gregallcharno{#1}{gregall}%
+    \gregallcharno{#1}{gregall}{0.8}%
   \endgroup %
 }
 \def\gregallmodchar{%
@@ -23,6 +23,6 @@
     \dogregallmodchar%
 }
 \def\dogregallmodchar#1{
-    \gregallcharno{#1}{gregallmod}%
+    \gregallcharno{#1}{gregallmod}{1.6}%
   \endgroup %
 }
