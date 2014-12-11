@@ -167,36 +167,56 @@ local gregallparse_neume = function (str, idx, len)
   return 0, idx, bases, heights, ls, pp, su
 end
 
-local add_ls = function(base, ls, position, glyphbox, lsbox, baseraise)
-   if (position == 3) then
-      local raise = glyphbox.height - (lsbox.height-lsbox.depth)/2 + baseraise
-      return base..'\\raise '..raise..'sp\\hbox{'..ls..'}'
-   elseif(position == 6) then
-      local raise = (glyphbox.height-glyphbox.depth)/2 - (lsbox.height+lsbox.depth)/2 + baseraise
-      return base..'\\raise '..raise..'sp\\hbox{'..ls..'}'
-   elseif(position == 9) then
-      local raise = -glyphbox.depth - (lsbox.height+lsbox.depth)/2 + baseraise
-      return base..'\\raise '..raise..'sp\\hbox{'..ls..'}'
-   elseif(position == 8) then
-      local raise = -glyphbox.depth - lsbox.height + baseraise
-      local kern1 = (glyphbox.width + lsbox.width)/2
-      local kern2 = (glyphbox.width - lsbox.width)/2
-      return base..'\\kern -'..kern1..'sp\\raise '..raise..'sp\\hbox{'..ls..'}\\kern '..kern2..'sp'
-   elseif(position == 2) then
-      local raise = glyphbox.height + lsbox.depth + baseraise
-      local kern1 = (glyphbox.width + lsbox.width)/2
-      local kern2 = (glyphbox.width - lsbox.width)/2
-      return base..'\\kern -'..kern1..'sp\\raise '..raise..'sp\\hbox{'..ls..'}\\kern '..kern2..'sp'
-   elseif(position == 1) then
-      local raise = glyphbox.height - (lsbox.height-lsbox.depth)/2 + baseraise
-      return '\\raise '..raise..'sp\\hbox{'..ls..'}'..base
-   elseif(position == 4) then
-      local raise = (glyphbox.height-glyphbox.depth)/2 - (lsbox.height+lsbox.depth)/2 + baseraise
-      return '\\raise '..raise..'sp\\hbox{'..ls..'}'..base
-   elseif(position == 7) then
-      local raise = -glyphbox.depth - (lsbox.height+lsbox.depth)/2 + baseraise
-      return '\\raise '..raise..'sp\\hbox{'..ls..'}'..base
-   end
+local add_ls = function(base, pre, ls, position, glyphbox, lsbox, baseraise, lwidths, curlwidths)
+  local raise = 0
+  if position == 3 or position == 6 or position == 9 then
+    if position == 3 then
+      raise = glyphbox.height - (lsbox.height-lsbox.depth)/2 + baseraise
+    elseif position == 6 then
+      raise = (glyphbox.height-glyphbox.depth)/2 - (lsbox.height+lsbox.depth)/2 + baseraise
+    else
+      raise = -glyphbox.depth - (lsbox.height+lsbox.depth)/2 + baseraise
+    end
+    local kern1 = curlwidths[position] - lwidths[12]
+    curlwidths[position] = curlwidths[position] + lsbox.width
+    local kern2 = lwidths[12] - curlwidths[position]
+    if curlwidths[12] == 0 then
+      curlwidths[12] = 1
+      kern1 = 0
+    end
+    return base..'\\kern '..kern1..'sp\\raise '..raise..'sp\\hbox{'..ls..'}\\kern '..kern2..'sp', pre
+  elseif position == 2 or position == 8 then
+    if position == 2 then
+      raise = glyphbox.height + lsbox.depth + baseraise
+    else
+      raise = -glyphbox.depth - lsbox.height + baseraise 
+    end
+    local kern1 = -math.max(glyphbox.width, lwidths[11])/2 - lwidths[position]/2 + curlwidths[position]
+    curlwidths[position] = curlwidths[position] + lsbox.width
+    local kern2 = - kern1 - lsbox.width
+    if curlwidths[11] == 0 and glyphbox.width < lwidths[11] then
+      curlwidths[11] = 1
+      base = '\\kern '..((lwidths[11] - glyphbox.width)/2)..'sp'..base
+      kern1 = kern1 + lwidths[11] - (lwidths[11] - glyphbox.width)/2
+    end
+    return base..'\\kern '..kern1..'sp\\raise '..raise..'sp\\hbox{'..ls..'}\\kern '..kern2..'sp', pre
+  else
+    if position == 1 then
+      raise = glyphbox.height - (lsbox.height-lsbox.depth)/2 + baseraise
+    elseif position == 4 then
+      raise = (glyphbox.height-glyphbox.depth)/2 - (lsbox.height+lsbox.depth)/2 + baseraise
+    else
+      raise = -glyphbox.depth - (lsbox.height+lsbox.depth)/2 + baseraise
+    end
+    local kern1 = curlwidths[position] - lwidths[position]
+    curlwidths[position] = curlwidths[position] + lsbox.width
+    local kern2 = lwidths[position] - curlwidths[position]
+    if curlwidths[10] == 0 then
+      curlwidths[10] = 1
+      kern1 = lwidths[10] - lwidths[position]
+    end
+    return base, pre..'\\kern '..kern1..'sp\\raise '..raise..'sp\\hbox{'..ls..'}\\kern '..kern2..'sp'
+  end
 end
 
 gregallparse_neumes = function(str, kind)
@@ -288,23 +308,48 @@ gregallparse_neumes = function(str, kind)
 	base = gregalltab[kind][r]
 	local above = ''
 	local below = ''
+	local rmetrics = gregallmetrics[kind][r]
 	-- Should the pre and subpuncta be somehow specially positioned
 	-- against the base neume?
-	if pp ~= '' then base = gregalltab[kind][pp] .. base end
-	if su ~= '' then base = base .. gregalltab[kind][su] end
+	if pp ~= '' then
+	  base = gregalltab[kind][pp] .. base
+	  rmetrics.width = rmetrics.width + gregallmetrics[kind][pp].width
+	  rmetrics.height = math.max (rmetrics.height, gregallmetrics[kind][pp].height)
+	  rmetrics.depth = math.max (rmetrics.height, gregallmetrics[kind][pp].depth)
+	end
+	if su ~= '' then
+	  base = base .. gregalltab[kind][su]
+	  rmetrics.width = rmetrics.width + gregallmetrics[kind][su].width
+	  rmetrics.height = math.max (rmetrics.height, gregallmetrics[kind][su].height)
+	  rmetrics.depth = math.max (rmetrics.height, gregallmetrics[kind][su].depth)
+	end
 	local baseraise = 0
 	if heights[0] ~= 5 then
 	  baseraise = (heights[0] - 5) * gregallmetrics[kind].cl.height / 4
 	  base = '\\raise '..baseraise..'sp\\hbox{'..base..'}'
 	end
+	local lwidths = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
+	local curlwidths = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
+	for i = 0, lscount - 1 do
+	  if ls[i] ~= '' then
+	    local p = tonumber(ls[i]:sub(-1, -1))
+	    local l = ls[i]:sub(1, -2)
+	    lwidths[p] = lwidths[p] + gregallmetrics[kind][l].width
+	  end
+	end
+	lwidths[10] = math.max (lwidths[1], lwidths[4], lwidths[7])
+	lwidths[11] = math.max (lwidths[2], lwidths[8])
+	lwidths[12] = math.max (lwidths[3], lwidths[6], lwidths[9])
+	local pre = ''
 	for i = 0, lscount - 1 do
 	  if ls[i] ~= '' then
 	    local p = tonumber(ls[i]:sub(-1, -1))
 	    local l = ls[i]:sub(1, -2)
 	    local lstr = gregalltab[kind][l]
-	    base = add_ls(base, lstr, p, gregallmetrics[kind][r], gregallmetrics[kind][l], baseraise)
+	    base, pre = add_ls(base, pre, lstr, p, rmetrics, gregallmetrics[kind][l], baseraise, lwidths, curlwidths)
 	  end
 	end
+	base = pre..base
       end
     end
     ret = ret .. base
