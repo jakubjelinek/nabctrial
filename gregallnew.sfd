@@ -1204,7 +1204,7 @@ Encoding: 672 672 56
 Width: 1000
 VWidth: 0
 LayerCount: 2
-Comment: "torculus resuspinus" 
+Comment: "torculus resupinus" 
 EndChar
 
 StartChar: torvire1
@@ -1212,7 +1212,7 @@ Encoding: 676 676 57
 Width: 1000
 VWidth: 0
 LayerCount: 2
-Comment: "torculus resuspinus cum episema" 
+Comment: "torculus resupinus cum episema" 
 EndChar
 
 StartChar: torvl
@@ -1220,7 +1220,7 @@ Encoding: 684 684 58
 Width: 1000
 VWidth: 0
 LayerCount: 2
-Comment: "torculus resuspinus liquescens" 
+Comment: "torculus resupinus liquescens" 
 EndChar
 
 StartChar: stro
@@ -2236,7 +2236,7 @@ Encoding: 674 674 185
 Width: 1000
 VWidth: 0
 LayerCount: 2
-Comment: "torculus resuspinus tenete" 
+Comment: "torculus resupinus tenete" 
 EndChar
 
 StartChar: tort
@@ -2244,7 +2244,7 @@ Encoding: 680 680 186
 Width: 1000
 VWidth: 0
 LayerCount: 2
-Comment: "torculus resuspinus with neumatic break" 
+Comment: "torculus resupinus with neumatic break" 
 EndChar
 
 StartChar: pes_pesqd
@@ -2252,7 +2252,7 @@ Encoding: 681 681 187
 Width: 1000
 VWidth: 0
 LayerCount: 2
-Comment: "torculus resuspinus with neumatic break" 
+Comment: "torculus resupinus with neumatic break" 
 EndChar
 
 StartChar: tortra_vir
@@ -2260,7 +2260,7 @@ Encoding: 682 682 188
 Width: 1000
 VWidth: 0
 LayerCount: 2
-Comment: "torculus resuspinus with neumatic break" 
+Comment: "torculus resupinus with neumatic break" 
 EndChar
 
 StartChar: torepi
@@ -2268,7 +2268,7 @@ Encoding: 686 686 189
 Width: 1000
 VWidth: 0
 LayerCount: 2
-Comment: "torculus resuspinus diminutus" 
+Comment: "torculus resupinus diminutus" 
 EndChar
 
 StartChar: toreepi
@@ -2276,7 +2276,7 @@ Encoding: 687 687 190
 Width: 1000
 VWidth: 0
 LayerCount: 2
-Comment: "torculus resuspinus cum episema" 
+Comment: "torculus resupinus cum episema" 
 EndChar
 
 StartChar: bivirl
@@ -2612,7 +2612,7 @@ Encoding: 688 688 232
 Width: 1000
 VWidth: 0
 LayerCount: 2
-Comment: "torculus resuspinus quadratus diminutus" 
+Comment: "torculus resupinus quadratus diminutus" 
 EndChar
 
 StartChar: virT
