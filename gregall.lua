@@ -228,14 +228,30 @@ local add_ls = function(base, pre, ls, position, glyphbox, lsbox, baseraise, lwi
   end
 end
 
+local add_spacing = function(str, len, idx, ret)
+  while idx <= len and (str:sub(idx, idx) == "/" or str:sub(idx, idx) == "`") do
+    if idx < len and str:sub(idx, idx + 1) == "//" then
+      ret = ret .. "\\kern \\grenabclargerspace"
+      idx = idx + 2
+    elseif idx < len and str:sub(idx, idx + 1) == "``" then
+      ret = ret .. "\\kern -\\grenabclargerspace"
+      idx = idx + 2
+    elseif str:sub(idx, idx) == "/" then
+      ret = ret .. "\\kern \\grenabcinterelementspace"
+      idx = idx + 1
+    else
+      ret = ret .. "\\kern -\\grenabcinterelementspace"
+      idx = idx + 1
+    end
+  end
+  return idx, ret
+end
+
 gregallparse_neumes = function(str, kind, scale)
   local len = str:len()
   local idx = 1
   local ret = ''
-  while idx <= len and str:sub(idx, idx) == "/" do
-    ret = ret .. "\\enspace{}"
-    idx = idx + 1
-  end
+  idx, ret = add_spacing(str, len, idx, ret)
   while idx <= len do
     local err, bases, heights, ls, pp, su, lscount
     err, idx, bases, heights, ls, pp, su = gregallparse_neume (str, idx, len)
@@ -364,10 +380,7 @@ gregallparse_neumes = function(str, kind, scale)
       end
     end
     ret = ret .. base
-    while idx <= len and str:sub(idx, idx) == "/" do
-      ret = ret .. "\\enspace{}"
-      idx = idx + 1
-    end
+    idx, ret = add_spacing(str, len, idx, ret)
   end
   return ret
 end
