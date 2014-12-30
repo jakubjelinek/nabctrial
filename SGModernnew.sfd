@@ -21,7 +21,7 @@ OS2Version: 3
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 1
 CreationTime: 1202942658
-ModificationTime: 1418144906
+ModificationTime: 1419945729
 PfmFamily: 81
 TTFWeight: 400
 TTFWidth: 5
@@ -54,6 +54,7 @@ NameList: Adobe Glyph List
 DisplaySize: -96
 AntiAlias: 1
 FitToEm: 1
+WinInfo: 64 8 2
 BeginPrivate: 0
 EndPrivate
 Grid
@@ -22703,7 +22704,7 @@ EndSplineSet
 EndChar
 
 StartChar: ppt2
-Encoding: 58779 58779 359
+Encoding: 58780 58780 359
 Width: 268
 VWidth: 342
 Flags: W
@@ -22738,7 +22739,7 @@ EndSplineSet
 EndChar
 
 StartChar: sut2
-Encoding: 58780 58780 360
+Encoding: 58781 58781 360
 Width: 268
 VWidth: 342
 Flags: W
@@ -22773,7 +22774,7 @@ EndSplineSet
 EndChar
 
 StartChar: sut2suy1
-Encoding: 58781 58781 361
+Encoding: 58782 58782 361
 Width: 370
 VWidth: 345
 Flags: W
@@ -22834,7 +22835,7 @@ EndSplineSet
 EndChar
 
 StartChar: sut2su2
-Encoding: 58782 58782 362
+Encoding: 58783 58783 362
 Width: 361
 VWidth: 345
 Flags: W
@@ -22889,7 +22890,7 @@ EndSplineSet
 EndChar
 
 StartChar: sut2sux1
-Encoding: 58783 58783 363
+Encoding: 58784 58784 363
 Width: 309
 VWidth: 342
 Flags: W
@@ -22944,7 +22945,7 @@ EndSplineSet
 EndChar
 
 StartChar: ppt3
-Encoding: 58784 58784 364
+Encoding: 58785 58785 364
 Width: 358
 VWidth: 342
 Flags: W
@@ -22989,7 +22990,7 @@ EndSplineSet
 EndChar
 
 StartChar: sut3
-Encoding: 58785 58785 365
+Encoding: 58786 58786 365
 Width: 358
 VWidth: 342
 Flags: W
@@ -23034,7 +23035,7 @@ EndSplineSet
 EndChar
 
 StartChar: sut3suw1
-Encoding: 58786 58786 366
+Encoding: 58787 58787 366
 Width: 426
 VWidth: 345
 Flags: W
@@ -23089,7 +23090,7 @@ EndSplineSet
 EndChar
 
 StartChar: sut3suy1
-Encoding: 58787 58787 367
+Encoding: 58788 58788 367
 Width: 460
 VWidth: 345
 Flags: W
@@ -23161,7 +23162,7 @@ EndSplineSet
 EndChar
 
 StartChar: ppt4
-Encoding: 58788 58788 368
+Encoding: 58789 58789 368
 Width: 448
 VWidth: 342
 Flags: W
@@ -23217,7 +23218,7 @@ EndSplineSet
 EndChar
 
 StartChar: sut4
-Encoding: 58789 58789 369
+Encoding: 58790 58790 369
 Width: 448
 VWidth: 342
 Flags: W
@@ -23273,7 +23274,7 @@ EndSplineSet
 EndChar
 
 StartChar: ppt5
-Encoding: 58790 58790 370
+Encoding: 58791 58791 370
 Width: 538
 VWidth: 342
 Flags: W
@@ -23340,7 +23341,7 @@ EndSplineSet
 EndChar
 
 StartChar: sut1sux1
-Encoding: 58793 58793 371
+Encoding: 58794 58794 371
 Width: 206
 VWidth: 345
 Flags: W
@@ -23384,7 +23385,7 @@ EndSplineSet
 EndChar
 
 StartChar: taN
-Encoding: 58794 58794 372
+Encoding: 58795 58795 372
 Width: 189
 VWidth: 344
 Flags: W
@@ -23422,7 +23423,7 @@ EndSplineSet
 EndChar
 
 StartChar: ppu2
-Encoding: 58795 58795 373
+Encoding: 58796 58796 373
 Width: 274
 VWidth: 342
 Flags: W
@@ -23489,7 +23490,7 @@ EndSplineSet
 EndChar
 
 StartChar: ppu3
-Encoding: 58797 58797 374
+Encoding: 58798 58798 374
 Width: 364
 VWidth: 342
 Flags: W
@@ -23592,7 +23593,7 @@ EndSplineSet
 EndChar
 
 StartChar: ppu4
-Encoding: 58798 58798 375
+Encoding: 58799 58799 375
 Width: 454
 VWidth: 342
 Flags: W
@@ -23713,7 +23714,7 @@ EndSplineSet
 EndChar
 
 StartChar: ppu5
-Encoding: 58799 58799 376
+Encoding: 58800 58800 376
 Width: 544
 VWidth: 342
 Flags: W
@@ -23871,7 +23872,7 @@ EndSplineSet
 EndChar
 
 StartChar: vippu1su2
-Encoding: 58800 58800 377
+Encoding: 58801 58801 377
 Width: 562
 VWidth: 345
 Flags: W
@@ -23947,7 +23948,7 @@ EndSplineSet
 EndChar
 
 StartChar: vippt1su2
-Encoding: 58802 58802 378
+Encoding: 58803 58803 378
 Width: 538
 VWidth: 345
 Flags: W
@@ -24009,7 +24010,7 @@ EndSplineSet
 EndChar
 
 StartChar: vippt1su1sut1
-Encoding: 58804 58804 379
+Encoding: 58805 58805 379
 Width: 614
 VWidth: 345
 Flags: W
@@ -24072,7 +24073,7 @@ EndSplineSet
 EndChar
 
 StartChar: suu2su2
-Encoding: 58805 58805 380
+Encoding: 58806 58806 380
 Width: 361
 VWidth: 345
 Flags: W
@@ -24159,7 +24160,7 @@ EndSplineSet
 EndChar
 
 StartChar: suu1su2
-Encoding: 58806 58806 381
+Encoding: 58807 58807 381
 Width: 271
 VWidth: 345
 Flags: W
@@ -24219,7 +24220,7 @@ EndSplineSet
 EndChar
 
 StartChar: suv1su2
-Encoding: 58807 58807 382
+Encoding: 58808 58808 382
 Width: 266
 VWidth: 345
 Flags: W
@@ -24293,7 +24294,7 @@ EndSplineSet
 EndChar
 
 StartChar: tg
-Encoding: 58808 58808 383
+Encoding: 58809 58809 383
 Width: 241
 VWidth: 345
 Flags: W
@@ -24336,7 +24337,7 @@ EndSplineSet
 EndChar
 
 StartChar: tgS4
-Encoding: 58809 58809 384
+Encoding: 58810 58810 384
 Width: 340
 VWidth: 345
 Flags: W
@@ -24428,7 +24429,7 @@ EndSplineSet
 EndChar
 
 StartChar: tgM
-Encoding: 58810 58810 385
+Encoding: 58811 58811 385
 Width: 302
 VWidth: 345
 Flags: W
@@ -24471,7 +24472,7 @@ EndSplineSet
 EndChar
 
 StartChar: tg1
-Encoding: 58811 58811 386
+Encoding: 58812 58812 386
 Width: 305
 VWidth: 345
 Flags: W
@@ -24524,7 +24525,7 @@ EndSplineSet
 EndChar
 
 StartChar: tgS1
-Encoding: 58812 58812 387
+Encoding: 58813 58813 387
 Width: 334
 VWidth: 345
 Flags: W
@@ -24569,7 +24570,7 @@ EndSplineSet
 EndChar
 
 StartChar: tgS2
-Encoding: 58813 58813 388
+Encoding: 58814 58814 388
 Width: 231
 VWidth: 345
 Flags: W
@@ -24613,7 +24614,7 @@ EndSplineSet
 EndChar
 
 StartChar: tgS
-Encoding: 58814 58814 389
+Encoding: 58815 58815 389
 Width: 314
 VWidth: 345
 Flags: W
@@ -24657,7 +24658,7 @@ EndSplineSet
 EndChar
 
 StartChar: tgSN
-Encoding: 58815 58815 390
+Encoding: 58816 58816 390
 Width: 320
 VWidth: 345
 Flags: W
@@ -24718,7 +24719,7 @@ EndSplineSet
 EndChar
 
 StartChar: tgS3
-Encoding: 58816 58816 391
+Encoding: 58817 58817 391
 Width: 414
 VWidth: 345
 Flags: W
@@ -24773,7 +24774,7 @@ EndSplineSet
 EndChar
 
 StartChar: ts
-Encoding: 58817 58817 392
+Encoding: 58818 58818 392
 Width: 297
 VWidth: 323
 Flags: W
@@ -24840,7 +24841,7 @@ EndSplineSet
 EndChar
 
 StartChar: tsN
-Encoding: 58819 58819 393
+Encoding: 58820 58820 393
 Width: 314
 VWidth: 327
 Flags: W
@@ -24914,7 +24915,7 @@ EndSplineSet
 EndChar
 
 StartChar: tsB
-Encoding: 58820 58820 394
+Encoding: 58821 58821 394
 Width: 305
 VWidth: 323
 Flags: W
@@ -24985,7 +24986,7 @@ EndSplineSet
 EndChar
 
 StartChar: tv
-Encoding: 58821 58821 395
+Encoding: 58822 58822 395
 Width: 369
 VWidth: 305
 Flags: W
@@ -25048,7 +25049,7 @@ EndSplineSet
 EndChar
 
 StartChar: tvN
-Encoding: 58822 58822 396
+Encoding: 58823 58823 396
 Width: 471
 VWidth: 378
 Flags: W
@@ -25120,7 +25121,7 @@ EndSplineSet
 EndChar
 
 StartChar: vi
-Encoding: 58823 58823 397
+Encoding: 58824 58824 397
 Width: 185
 VWidth: 305
 Flags: W
@@ -25150,7 +25151,7 @@ EndSplineSet
 EndChar
 
 StartChar: toM2
-Encoding: 58826 58826 398
+Encoding: 58827 58827 398
 Width: 400
 VWidth: 342
 Flags: W
@@ -25207,7 +25208,7 @@ EndSplineSet
 EndChar
 
 StartChar: toM2N
-Encoding: 58827 58827 399
+Encoding: 58828 58828 399
 Width: 463
 VWidth: 342
 Flags: W
@@ -25277,7 +25278,7 @@ EndSplineSet
 EndChar
 
 StartChar: toM
-Encoding: 58828 58828 400
+Encoding: 58829 58829 400
 Width: 400
 VWidth: 342
 Flags: W
@@ -25346,7 +25347,7 @@ EndSplineSet
 EndChar
 
 StartChar: toMN
-Encoding: 58829 58829 401
+Encoding: 58830 58830 401
 Width: 463
 VWidth: 342
 Flags: W
@@ -25429,7 +25430,7 @@ EndSplineSet
 EndChar
 
 StartChar: viNEci
-Encoding: 58830 58830 402
+Encoding: 58831 58831 402
 Width: 489
 VWidth: 378
 Flags: W
@@ -25497,7 +25498,7 @@ EndSplineSet
 EndChar
 
 StartChar: scM1
-Encoding: 58831 58831 403
+Encoding: 58832 58832 403
 Width: 433
 VWidth: 342
 Flags: W
@@ -25565,7 +25566,7 @@ EndSplineSet
 EndChar
 
 StartChar: trM
-Encoding: 58832 58832 404
+Encoding: 58833 58833 404
 Width: 583
 VWidth: 342
 Flags: W
@@ -25640,7 +25641,7 @@ EndSplineSet
 EndChar
 
 StartChar: viNsu2sux1
-Encoding: 58833 58833 405
+Encoding: 58834 58834 405
 Width: 469
 VWidth: 345
 Flags: W
@@ -25723,7 +25724,7 @@ EndSplineSet
 EndChar
 
 StartChar: sfM
-Encoding: 58834 58834 406
+Encoding: 58835 58835 406
 Width: 620
 VWidth: 342
 Flags: W
@@ -25802,7 +25803,7 @@ EndSplineSet
 EndChar
 
 StartChar: viNsut2sux1
-Encoding: 58835 58835 407
+Encoding: 58836 58836 407
 Width: 479
 VWidth: 345
 Flags: W
@@ -25887,7 +25888,7 @@ EndSplineSet
 EndChar
 
 StartChar: viNEviEvi
-Encoding: 58836 58836 408
+Encoding: 58837 58837 408
 Width: 596
 VWidth: 369
 Flags: W
@@ -25950,7 +25951,7 @@ EndSplineSet
 EndChar
 
 StartChar: scN1
-Encoding: 58837 58837 409
+Encoding: 58838 58838 409
 Width: 639
 VWidth: 378
 Flags: W
@@ -26019,7 +26020,7 @@ EndSplineSet
 EndChar
 
 StartChar: scM2
-Encoding: 58838 58838 410
+Encoding: 58839 58839 410
 Width: 433
 VWidth: 342
 Flags: W
@@ -26074,7 +26075,7 @@ EndSplineSet
 EndChar
 
 StartChar: visu1sut1sux1
-Encoding: 58839 58839 411
+Encoding: 58840 58840 411
 Width: 460
 VWidth: 342
 Flags: W
@@ -26146,7 +26147,7 @@ EndSplineSet
 EndChar
 
 StartChar: visu1sut2
-Encoding: 58840 58840 412
+Encoding: 58841 58841 412
 Width: 510
 VWidth: 342
 Flags: W
@@ -26210,7 +26211,7 @@ EndSplineSet
 EndChar
 
 StartChar: visu1suv1
-Encoding: 58841 58841 413
+Encoding: 58842 58842 413
 Width: 438
 VWidth: 345
 Flags: W
@@ -26292,7 +26293,7 @@ EndSplineSet
 EndChar
 
 StartChar: visu2sux1
-Encoding: 58842 58842 414
+Encoding: 58843 58843 414
 Width: 468
 VWidth: 345
 Flags: W
@@ -26363,7 +26364,7 @@ EndSplineSet
 EndChar
 
 StartChar: visut1su2
-Encoding: 58843 58843 415
+Encoding: 58844 58844 415
 Width: 442
 VWidth: 345
 Flags: W
@@ -26426,7 +26427,7 @@ EndSplineSet
 EndChar
 
 StartChar: visut2sux1
-Encoding: 58844 58844 416
+Encoding: 58845 58845 416
 Width: 479
 VWidth: 345
 Flags: W
@@ -26499,7 +26500,7 @@ EndSplineSet
 EndChar
 
 StartChar: visuv1su2
-Encoding: 58845 58845 417
+Encoding: 58846 58846 417
 Width: 441
 VWidth: 345
 Flags: W
@@ -26592,7 +26593,7 @@ EndSplineSet
 EndChar
 
 StartChar: peG
-Encoding: 58846 58846 418
+Encoding: 58847 58847 418
 Width: 338
 VWidth: 369
 Flags: W
@@ -26637,7 +26638,7 @@ EndSplineSet
 EndChar
 
 StartChar: viN
-Encoding: 58847 58847 419
+Encoding: 58848 58848 419
 Width: 221
 VWidth: 378
 Flags: W
@@ -26670,7 +26671,7 @@ EndSplineSet
 EndChar
 
 StartChar: viNEviNEvi
-Encoding: 58849 58849 420
+Encoding: 58850 58850 420
 Width: 625
 VWidth: 369
 Flags: W
@@ -26736,7 +26737,7 @@ EndSplineSet
 EndChar
 
 StartChar: scM
-Encoding: 58850 58850 421
+Encoding: 58851 58851 421
 Width: 566
 VWidth: 369
 Flags: W
@@ -26796,7 +26797,7 @@ EndSplineSet
 EndChar
 
 StartChar: viB
-Encoding: 58851 58851 422
+Encoding: 58852 58852 422
 Width: 222
 VWidth: 369
 Flags: W
@@ -26833,7 +26834,7 @@ EndSplineSet
 EndChar
 
 StartChar: viNB
-Encoding: 58852 58852 423
+Encoding: 58853 58853 423
 Width: 282
 VWidth: 369
 Flags: W
@@ -26881,7 +26882,7 @@ EndSplineSet
 EndChar
 
 StartChar: vs
-Encoding: 58853 58853 424
+Encoding: 58854 58854 424
 Width: 313
 VWidth: 351
 Flags: W
@@ -26923,7 +26924,7 @@ EndSplineSet
 EndChar
 
 StartChar: vsN
-Encoding: 58856 58856 425
+Encoding: 58857 58857 425
 Width: 313
 VWidth: 353
 Flags: W
@@ -26973,7 +26974,7 @@ EndSplineSet
 EndChar
 
 StartChar: vsNB
-Encoding: 58857 58857 426
+Encoding: 58858 58858 426
 Width: 513
 VWidth: 391
 Flags: W
@@ -27040,7 +27041,7 @@ EndSplineSet
 EndChar
 
 StartChar: vsB
-Encoding: 58858 58858 427
+Encoding: 58859 58859 427
 Width: 513
 VWidth: 391
 Flags: W

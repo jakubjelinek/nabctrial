@@ -10,7 +10,6 @@ local gregallaliases = {
 ["pfG"] = "sfM",
 ["cl~"] = "vi>",
 ["pr~"] = "vs>",
-["ppt1"] = "ta",
 ["visu2"] = "ci",
 ["vi-su2"] = "ci-",
 ["visu3"] = "ci1",

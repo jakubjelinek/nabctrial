@@ -37,7 +37,7 @@ clS	clitra
 clS-	clitrae
 clS-su2	clitraepp
 cl	cliv
-cllsc2	clivC
+cllsc3	clivC
 cllst2	clivT
 poG	cliv_e2_vir
 poG-	cliv_e2_vir_e1
@@ -202,7 +202,7 @@ pf~	porl
 posu2	porpp
 ci-pp2	ppclvepp
 pr	prma
-prlsc1	prmaC
+prlsc2	prmaC
 prlst2	prmaT
 pr-	prmae
 pr-lsc3	prmaeC
@@ -305,7 +305,7 @@ pe!vi	scpesv
 sf>	scppanc
 sf	scppcli
 sfM1	scppcli3
-sflsc2	scppcliC
+sflsc3	scppcliC
 vipp4	scppppv
 vi-pp4	scppppve
 sc1	scpppv
@@ -362,7 +362,7 @@ stS	stroe2
 st>	strol
 to	tor
 toM1	tor3
-tolsc2	torC
+tolsc3	torC
 tolsc4lst3	torCT
 tolst2	torT
 to!ciG	torclctt
@@ -415,6 +415,7 @@ cl-ppt1	tra_cliv_e2
 sut1su1sux1	tra_pun_stroD
 sut1su2	tra_punc2D
 sut1sux1	tra_stroD
+ppt1	tracA
 ppt2	trac2A
 sut2	trac2D
 sut2suy1	trac2_graveD
@@ -462,7 +463,7 @@ ts>	tristrol
 tv	trivir
 tv-	trivire
 vi	vir
-vilsc2	virC
+vilsc3	virC
 vilst1	virT
 toM2	vir_cliv
 toM2-	vir_cliv_e2
